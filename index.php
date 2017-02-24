@@ -35,7 +35,7 @@ if (defined('light')===true) {
 //Задача 4
 
 
-$age=random_int(1,100);
+$age = random_int(1,100);
 echo $age,'<br>';
 
 if ($age >= 18 && $age <= 65){
@@ -48,6 +48,37 @@ if ($age >= 18 && $age <= 65){
 
 if ($age > 100 && 1 > $age){
     echo 'Неизвестный возраст';
+}
+echo '<br><hr>';
+
+// Задание 5
+
+$day = random_int(1,7);
+
+switch ($day){
+    case 1:
+        echo 'Понедельник. ', 'Это рабочий день';
+        break;
+    case 2:
+        echo 'Вторник. ', 'Это рабочий день';
+        break;
+    case 3:
+        echo 'Среда. ', 'Это рабочий день';
+        break;
+    case 4:
+        echo 'Четверг. ', 'Это рабочий день';
+        break;
+    case 5:
+        echo 'Пятница. ', 'Это рабочий день';
+        break;
+    case 6:
+        echo 'Суббота. ', 'Шаббат работать нельзя';
+        break;
+    case 7:
+        echo 'Воскресенье. ', 'Это выходной день';
+        break;
+    default :
+        echo 'Неизвестный день';
 }
 echo '<br><hr>';
 
