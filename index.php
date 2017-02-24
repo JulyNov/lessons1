@@ -108,18 +108,45 @@ $cars = [
     'opel' => $opel,
     'toyota' => $toyota,
 ];
-echo '<table border="1">';
+echo '<table cellspacing="0" border="1" cellpadding="5" >';
 foreach ($cars as $key => $value){
 
     echo "<tr><td>Car $key <br>";
     print implode(' ',$value);
     echo '</tr></td>';
 }
-echo '<br></table>';
+echo '<br></table><hr>';
 
-/**
- * Created by PhpStorm.
- * User: July
- * Date: 2/23/2017
- * Time: 9:10 PM
- */
+//Задание 7
+
+/*Задание #7
+
+Используя цикл for, выведите таблицу умножения размером 10x10. Таблица должна быть выведена с помощью HTML тега <table>
+Если значение индекса строки и столбца чётный, то результат вывести в круглых скобках.
+Если значение индекса строки и столбца Нечётный, то результат вывести в квадратных скобках.
+Во всех остальных случаях результат выводить просто числом.
+*/
+
+echo 'Таблица умножения <br>' . "\n";
+
+echo '<table cellspacing="0" border="1" cellpadding="5">' . PHP_EOL;
+
+for ($i = 1; $i < 10; $i++){
+    echo "\t<tr> \n";
+    for ($j = 1; $j < 10; $j++){
+        $sum = $i*$j;
+        if ($i%2 === 0 && $j%2 === 0) {
+            echo "\t\t<td> ($sum) </td>\n";
+        }
+        elseif ($i%2 === 1 && $j%2 === 1){
+            echo "\t\t<td> [$sum] </td>\n";
+        }
+        else{
+            echo "\t\t<td> $sum </td>\n";
+        }
+    }
+    echo "\t</tr>\n";
+}
+echo '</table>' . PHP_EOL;
+
+
