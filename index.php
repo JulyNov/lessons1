@@ -13,10 +13,10 @@ echo '<hr>';
  *Сколько рисунков, выполненные красками, на школьной выставке?
  */
 
- $allItems = 80;
- $feltItems = 23;
- $pencilItems = 40;
- $paintItems = $allItems - $feltItems - $pencilItems;
+$allItems = 80;
+$feltItems = 23;
+$pencilItems = 40;
+$paintItems = $allItems - $feltItems - $pencilItems;
 
 print <<<end
 Дана задача: На школьной выставке $allItems рисунков.
@@ -27,35 +27,35 @@ end;
 
 //Задача 3
 
-define ('light',299792458);
-if (defined('light')===true) {
+define('light', 299792458);
+if (defined('light') === true) {
     echo 'Константа опеределена. Скорость света ', light, 'км в секунду<br><hr>';
 }
 
 //Задача 4
 
 
-$age = random_int(1,100);
-echo $age,'<br>';
+$age = random_int(1, 100);
+echo $age, '<br>';
 
-if ($age >= 18 && $age <= 65){
+if ($age >= 18 && $age <= 65) {
     echo 'Вам еще работать и работать';
-} elseif ($age > 65){
+} elseif ($age > 65) {
     echo 'Вам пора на пенсию';
-} elseif ($age < 18 && 1 < $age){
+} elseif ($age < 18 && 1 < $age) {
     echo 'Вам еще рано работать';
 }
 
-if ($age > 100 && 1 > $age){
+if ($age > 100 && 1 > $age) {
     echo 'Неизвестный возраст';
 }
 echo '<br><hr>';
 
-// Задание 5
+// Задача 5
 
-$day = random_int(1,7);
+$day = random_int(1, 7);
 
-switch ($day){
+switch ($day) {
     case 1:
         echo 'Понедельник. ', 'Это рабочий день';
         break;
@@ -81,6 +81,56 @@ switch ($day){
         echo 'Неизвестный день';
 }
 echo '<br><hr>';
+
+/*Задание #6
+
+Создайте массив $bmw с ячейками:
+model
+speed
+doors
+year
+ Заполните ячейки значениями соответсвенно: “X5”, 120, 5, “2015”
+Создайте   массивы   $toyota   и   $opel   аналогичные   массиву   $bmw   (заполните  данными)
+Объедините три массива в один многомерный массив
+Выведите значения всех трех массивов в виде:
+CAR name
+name ­ model ­speed ­ doors ­ year
+Например:
+CAR bmw
+X5 ­120 ­ 5 ­ 2015
+ */
+
+$bmw = [];
+$bmw['model'] = 'X5';
+$bmw['speed'] = '120';
+$bmw['doors'] = '5';
+$bmw['year'] = '2015';
+
+$toyota = [];
+$toyota['model']='corolla';
+$toyota['speed']='110';
+$toyota['doors']='5';
+$toyota['year']='2010';
+
+$opel = [];
+$opel['model']='zafira';
+$opel['speed']='100';
+$opel['doors']='5';
+$opel['year']='2004';
+
+$cars = [
+    'bmw' => $bmw,
+    'opel' => $opel,
+    'toyota' => $toyota,
+];
+echo '<table border="1">';
+foreach ($cars as $key => $value){
+
+    echo "<tr><td>Car $key <br>";
+    print implode(' ',$value);
+    echo '</tr></td>';
+}
+echo '<br></table>';
 
 /**
  * Created by PhpStorm.
