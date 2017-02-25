@@ -26,7 +26,7 @@ end;
 
 define('light', 299792458);
 if (defined('light') === true) {
-    echo 'Константа опеределена. Скорость света ', light, 'км в секунду<br><hr>';
+    echo '<p>Константа опеределена. Скорость света ' . light . 'км в секунду</p><hr>';
 }
 
 //Задача 4
@@ -89,16 +89,16 @@ $bmw['doors'] = '5';
 $bmw['year'] = '2015';
 
 $toyota = [];
-$toyota['model']='corolla';
-$toyota['speed']='110';
-$toyota['doors']='5';
-$toyota['year']='2010';
+$toyota['model'] = 'corolla';
+$toyota['speed'] = '110';
+$toyota['doors'] = '5';
+$toyota['year'] = '2010';
 
 $opel = [];
-$opel['model']='zafira';
-$opel['speed']='100';
-$opel['doors']='5';
-$opel['year']='2004';
+$opel['model'] = 'zafira';
+$opel['speed'] = '100';
+$opel['doors'] = '5';
+$opel['year'] = '2004';
 
 $cars = [
     'bmw' => $bmw,
@@ -106,33 +106,28 @@ $cars = [
     'toyota' => $toyota,
 ];
 echo '<table cellspacing="0" border="1" cellpadding="5" >';
-foreach ($cars as $key => $value){
-
-    echo "<tr><td>Car $key <br>";
-    print implode(' ',$value);
-    echo '</tr></td>';
+foreach ($cars as $key => $value) {
+    echo "<tr><td>Car $key<br>" . implode(' ', $value) . '</tr></td>';
 }
 echo '<br></table><hr>';
 
 //Задание 7
 
 
-echo 'Таблица умножения <br>' . "\n";
+echo 'Таблица умножения<br>' . "\n";
 
 echo '<table cellspacing="0" border="1" cellpadding="5">' . PHP_EOL;
 
-for ($i = 1; $i < 10; $i++){
-    echo "\t<tr> \n";
-    for ($j = 1; $j < 10; $j++){
-        $sum = $i*$j;
-        if ($i%2 === 0 && $j%2 === 0) {
-            echo "\t\t<td> ($sum) </td>\n";
-        }
-        elseif ($i%2 === 1 && $j%2 === 1){
-            echo "\t\t<td> [$sum] </td>\n";
-        }
-        else{
-            echo "\t\t<td> $sum </td>\n";
+for ($i = 1; $i < 10; $i++) {
+    echo "\t<tr>\n";
+    for ($j = 1; $j < 10; $j++) {
+        $sum = $i * $j;
+        if ($i % 2 === 0 && $j % 2 === 0) {
+            echo "\t\t<td>($sum)</td>\n";
+        } elseif ($i % 2 === 1 && $j % 2 === 1) {
+            echo "\t\t<td>[$sum]</td>\n";
+        } else {
+            echo "\t\t<td>$sum</td>\n";
         }
     }
     echo "\t</tr>\n";
@@ -146,10 +141,10 @@ echo '</table><hr>' . PHP_EOL;
 $str = 'ахат штайм шалош арба хамеш шеш шева шмоне тейша эсэр';
 print $str . '<br>';
 
-$arr = explode(' ',$str);
-print implode(' ',$arr) . '<br>';
+$arr = explode(' ', $str);
+print implode(' ', $arr) . '<br>';
 
-$i=0;
+$i = 0;
 $count = count($arr);
 $reversarr = [];
 while ($i < $count) {
@@ -158,5 +153,5 @@ while ($i < $count) {
 
 }
 
-$reversStr = implode(',',$reversarr);
+$reversStr = implode(',', $reversarr);
 print $reversStr . '<hr>';
